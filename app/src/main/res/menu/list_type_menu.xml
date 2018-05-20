@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/lt_mn_popular"
+            android:title="@string/lt_menu_popular_label" />
+        <item
+            android:id="@+id/lt_mn_top_rated"
+            android:title="@string/lt_menu_top_rated_label" />
+    </group>
+</menu>

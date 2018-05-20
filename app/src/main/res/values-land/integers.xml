@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
+  -->
+
+<resources>
+
+    <integer name="mp_num_columns">3</integer>
+    <integer name="mi_image_weight">0</integer>
+    <integer name="mi_info_weight">1</integer>
+    <integer name="mi_desc_weight">2</integer>
+
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
+  -->
+
+<resources>
+    <!--Movie Info Activity Poster Dimensions -->
+    <dimen name="movie_info_poster_top_padding">16dp</dimen>
+    <dimen name="movie_info_poster_bottom_padding">16dp</dimen>
+    <dimen name="movie_info_poster_right_padding">16dp</dimen>
+    <dimen name="movie_info_poster_left_padding">16dp</dimen>
+    <dimen name="movie_info_poster_width">162dp</dimen>
+    <dimen name="movie_info_poster_height">240dp</dimen>
+
+    <!--Movie Info Info Activity Dimensions -->
+    <dimen name="movie_info_info_top_padding">8dp</dimen>
+    <dimen name="movie_info_info_bottom_padding">4dp</dimen>
+    <dimen name="movie_info_info_left_padding">12dp</dimen>
+    <dimen name="movie_info_info_right_padding">4dp</dimen>
+
+
+    <!--Movie Info Activity Description Dimension -->
+    <dimen name="movie_info_description_top_padding">16dp</dimen>
+    <dimen name="movie_info_description_bottom_padding">16dp</dimen>
+    <dimen name="movie_info_description_right_padding">24dp</dimen>
+    <dimen name="movie_info_description_left_padding">24dp</dimen>
+</resources>

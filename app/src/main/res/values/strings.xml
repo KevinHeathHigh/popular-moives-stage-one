@@ -1,3 +1,42 @@
+<!--
+  ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
+  -->
+
 <resources>
-    <string name="app_name">PopularMoviesStageOne</string>
+    <string name="app_name">Pop (corn) Movies</string>
+
+    <!-- Movie Database API Strings-->
+    <string name="md_api_base_url" translatable="false">https://api.themoviedb.org/3</string>
+    <string name="md_movie_path" translatable="false">movie</string>
+    <string name="md_popular_path" translatable="false">popular</string>
+    <string name="md_top_rated_path" translatable="false">top_rated</string>
+    <string name="md_page_key_param" translatable="false">page</string>
+    <string name="md_api_key_param" translatable="false">api_key</string>
+    <!-- Personal API key goes in the following string element
+     This will needs to be added for the program to run-->
+    <string name="md_api_key_value" translatable="false">[INSTET API KEY HERE]</string>
+    <string name="initial_result_page" translatable="false">1</string>
+
+    <!--Movie Database Image Strings -->
+    <string name="md_image_base_url" translatable="false">http://image.tmdb.org/t/p/</string>
+
+    <!--List Type Menu Items -->
+    <string name="lt_menu_popular_label">Popular</string>
+    <string name="lt_menu_top_rated_label">Top Rated</string>
+
+    <string name="rating_out_of">/10</string>
+
+    <!--Instance State Key -->
+    <string name="mi_instance_state_key" translatable="false">movie_info</string>
+    <string name="lt_instance_state_key" translatable="false">list_type</string>
+    <string name="checked_menu_id" translatable="false">check_menu_id</string>
+
+    <!-- Error Messages -->
+    <string name="er_no_access_to_movie_db">Unable to access Movie DB, check network connectivity and try again</string>
+    <string name="er_unknown_date">Unknown</string>
+    <string name="er_no_intent">No Intent Found</string>
+
+    <!-- Content Descriptors -->
+    <string name="cd_movie_poster_image">Image of Movie Poster</string>
+
 </resources>
