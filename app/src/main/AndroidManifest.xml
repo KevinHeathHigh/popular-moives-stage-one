@@ -3,7 +3,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.hobbitsoft.popularmoviesstageone">
+    package="net.hobbitsoft.popularmovies">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
