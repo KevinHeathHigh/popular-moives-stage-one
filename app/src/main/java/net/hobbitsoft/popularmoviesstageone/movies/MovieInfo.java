@@ -93,8 +93,6 @@ public class MovieInfo implements Parcelable {
         posterImageURL = parcel.readString();
         posterDetailImageURL = parcel.readString();
         posterLargeImageURL = parcel.readString();
-//        posterBitmap = (Bitmap) parcel.readParcelable(getClass().getClassLoader());
-//        posterDetailBitmap = (Bitmap) parcel.readParcelable(getClass().getClassLoader());
     }
 
     public int getVoteCount() {
@@ -266,8 +264,6 @@ public class MovieInfo implements Parcelable {
         dest.writeString(posterImageURL);
         dest.writeString(posterDetailImageURL);
         dest.writeString(posterLargeImageURL);
-//        dest.writeParcelable(posterBitmap, flags);
-//        dest.writeParcelable(posterDetailBitmap, flags);
     }
 
     public static final Parcelable.Creator<MovieInfo> CREATOR = new Parcelable.Creator<MovieInfo>() {
