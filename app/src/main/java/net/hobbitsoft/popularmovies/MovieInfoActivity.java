@@ -33,8 +33,7 @@ public class MovieInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_info);
 
-        ActivityMovieInfoBinding movieInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_movie_info);
-
+        ActivityMovieInfoBinding activityMovieInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_movie_info);
         //Get the Intent and confirm its validity - else close activity
         final Intent intent = getIntent();
         if (intent == null) {
@@ -47,7 +46,7 @@ public class MovieInfoActivity extends AppCompatActivity {
         final MovieInfo movieInfo = movieInfoBundle.getParcelable(EXTRA_MOVIE_INFO);
 
         //Get the appropriate Movie Info
-        Picasso.get().load(movieInfo.getPosterDetailImageURL()).into(movieInfoBinding.moviePoster,
+        Picasso.get().load(movieInfo.getPosterDetailImageURL()).into(activityMovieInfoBinding.moviePoster,
                 new Callback() {
                     @Override
                     public void onSuccess() {
@@ -59,14 +58,14 @@ public class MovieInfoActivity extends AppCompatActivity {
                         errorToast();
                     }
                 });
-        movieInfoBinding.movieTitle.setText(movieInfo.getTitle());
+        activityMovieInfoBinding.movieTitle.setText(movieInfo.getTitle());
         //We just want to display the year
-        movieInfoBinding.movieReleaseDate.setText(dateToYear(movieInfo.getReleaseDate()));
-        movieInfoBinding.movieRating.setText(String.valueOf(movieInfo.getVoteAverage()
+        activityMovieInfoBinding.movieReleaseDate.setText(dateToYear(movieInfo.getReleaseDate()));
+        activityMovieInfoBinding.movieRating.setText(String.valueOf(movieInfo.getVoteAverage()
                 + getResources().getString(R.string.rating_out_of)));
-        movieInfoBinding.movieDescription.setText(movieInfo.getOverview());
+        activityMovieInfoBinding.movieDescription.setText(movieInfo.getOverview());
 
-        movieInfoBinding.moviePoster.setOnClickListener(new View.OnClickListener() {
+        activityMovieInfoBinding.moviePoster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent showPosterIntent = new Intent(MovieInfoActivity.this,

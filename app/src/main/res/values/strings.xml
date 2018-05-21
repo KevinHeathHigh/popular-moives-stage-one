@@ -12,9 +12,6 @@
     <string name="md_top_rated_path" translatable="false">top_rated</string>
     <string name="md_page_key_param" translatable="false">page</string>
     <string name="md_api_key_param" translatable="false">api_key</string>
-    <!-- Personal API key goes in the following string element
-     This will needs to be added for the program to run-->
-    <string name="md_api_key_value" translatable="false">[INSTET API KEY HERE]</string>
     <string name="initial_result_page" translatable="false">1</string>
 
     <!--Movie Database Image Strings -->

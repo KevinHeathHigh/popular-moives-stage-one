@@ -8,6 +8,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
+import net.hobbitsoft.popularmovies.BuildConfig;
 import net.hobbitsoft.popularmovies.R;
 import net.hobbitsoft.popularmovies.constants.ListType;
 
@@ -36,7 +37,8 @@ public class MovieDBAccess {
      */
     private static Uri buildBaseAPIURL() {
         return Uri.parse(mContext.getString(R.string.md_api_base_url)).buildUpon()
-                .appendQueryParameter(mContext.getString(R.string.md_api_key_param), mContext.getString(R.string.md_api_key_value))
+                .appendQueryParameter(mContext.getString(R.string.md_api_key_param),
+                        BuildConfig.themoviedb_api_key)
                 .build();
     }
 
