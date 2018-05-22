@@ -10,6 +10,8 @@
     <string name="md_movie_path" translatable="false">movie</string>
     <string name="md_popular_path" translatable="false">popular</string>
     <string name="md_top_rated_path" translatable="false">top_rated</string>
+    <string name="md_reviews_path" translatable="false">review</string>
+    <string name="md_trailers_path" translatable="false">trailers</string>
     <string name="md_page_key_param" translatable="false">page</string>
     <string name="md_api_key_param" translatable="false">api_key</string>
     <string name="initial_result_page" translatable="false">1</string>
@@ -20,6 +22,7 @@
     <!--List Type Menu Items -->
     <string name="lt_menu_popular_label">Popular</string>
     <string name="lt_menu_top_rated_label">Top Rated</string>
+    <string name="lt_menu_favorites_label">Favorites</string>
 
     <string name="rating_out_of">/10</string>
 
@@ -35,5 +38,7 @@
 
     <!-- Content Descriptors -->
     <string name="cd_movie_poster_image">Image of Movie Poster</string>
+
+    <string name="favorites_label">Favorite</string>
 
 </resources>

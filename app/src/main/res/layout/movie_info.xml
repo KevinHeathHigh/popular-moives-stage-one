@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/movie_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/movie_info_info_bottom_padding"
+        android:paddingEnd="@dimen/movie_info_info_right_padding"
+        android:paddingLeft="@dimen/movie_info_info_left_padding"
+        android:paddingRight="@dimen/movie_info_info_right_padding"
+        android:paddingStart="@dimen/movie_info_info_left_padding"
+        android:paddingTop="@dimen/movie_info_info_top_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:text="2018" />
+
+    <TextView
+        android:id="@+id/movie_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/movie_info_info_bottom_padding"
+        android:paddingEnd="@dimen/movie_info_info_right_padding"
+        android:paddingLeft="@dimen/movie_info_info_left_padding"
+        android:paddingRight="@dimen/movie_info_info_right_padding"
+        android:paddingStart="@dimen/movie_info_info_left_padding"
+        android:paddingTop="@dimen/movie_info_info_top_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        tools:text="8.0/10" />
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star_big_on"
+        android:paddingStart="@dimen/movie_info_info_left_padding"
+        android:paddingLeft="@dimen/movie_info_info_left_padding"
+        android:paddingTop="@dimen/movie_info_info_top_padding"
+        android:paddingBottom="@dimen/movie_info_info_bottom_padding" />
+
+</LinearLayout>

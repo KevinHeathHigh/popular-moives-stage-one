@@ -10,6 +10,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/movie_info_info_bottom_padding"
+            android:paddingLeft="@dimen/movie_info_info_left_padding"
+            android:paddingStart="@dimen/movie_info_info_left_padding"
+            android:paddingTop="@dimen/movie_info_info_top_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:background="@color/colorAccent"
+            tools:text="Pop(corn): The Movie" />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -25,7 +41,7 @@
             android:paddingRight="@dimen/movie_info_poster_right_padding"
             android:paddingStart="@dimen/movie_info_poster_left_padding"
             android:paddingTop="@dimen/movie_info_poster_top_padding"
-            tools:srcCompat="@tools:sample/avatars"
+            tools:srcCompat="@mipmap/ic_launcher_foreground"
             android:contentDescription="@string/cd_movie_poster_image" />
 
         <LinearLayout
@@ -36,39 +52,7 @@
             android:paddingBottom="4dp"
             android:paddingTop="8dp">
 
-            <TextView
-                android:id="@+id/movie_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/movie_info_info_bottom_padding"
-                android:paddingLeft="@dimen/movie_info_info_left_padding"
-                android:paddingStart="@dimen/movie_info_info_left_padding"
-                android:paddingTop="@dimen/movie_info_info_top_padding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                tools:text="Pop(corn): The Movie" />
-
-            <TextView
-                android:id="@+id/movie_release_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/movie_info_info_bottom_padding"
-                android:paddingLeft="@dimen/movie_info_info_left_padding"
-                android:paddingStart="@dimen/movie_info_info_left_padding"
-                android:paddingTop="@dimen/movie_info_info_top_padding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                tools:text="2018" />
-
-            <TextView
-                android:id="@+id/movie_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/movie_info_info_bottom_padding"
-                android:paddingLeft="@dimen/movie_info_info_left_padding"
-                android:paddingStart="@dimen/movie_info_info_left_padding"
-                android:paddingTop="@dimen/movie_info_info_top_padding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                tools:text="8.0" />
-
+            <include layout="@layout/movie_info" />
         </LinearLayout>
 
         <ScrollView
@@ -91,5 +75,5 @@
         </ScrollView>
 
     </LinearLayout>
-
+    </LinearLayout>
 </layout>
