@@ -4,7 +4,11 @@
 
 package net.hobbitsoft.popularmovies.constants;
 
+import android.annotation.SuppressLint;
+
 /* Constants class for defining Image Sizes */
+@SuppressWarnings("unused")
+@SuppressLint("unused")
 public final class ImageSizes {
     /*
     Full image URL that includes the Size:

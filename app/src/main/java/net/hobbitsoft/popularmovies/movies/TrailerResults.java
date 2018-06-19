@@ -9,41 +9,42 @@ import java.util.List;
     "youtube": []
 }
  */
+@SuppressWarnings("ALL")
 public class TrailerResults {
-    private static String id;
-    private static List<QuicktimeTrailers> quicktime;
-    private static List<YouTubeTrailers> youtube;
+    private int id;
+    private List<QuicktimeTrailer> quicktime;
+    private List<YouTubeTrailer> youtube;
 
     public TrailerResults() {
     }
 
-    public TrailerResults(String id, List<QuicktimeTrailers> quicktime, List<YouTubeTrailers> youtube) {
+    public TrailerResults(int id, List<QuicktimeTrailer> quicktime, List<YouTubeTrailer> youtube) {
         this.id = id;
         this.quicktime = quicktime;
         this.youtube = youtube;
     }
 
-    public static String getId() {
+    public int getId() {
         return id;
     }
 
-    public static void setId(String id) {
-        TrailerResults.id = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public static List<QuicktimeTrailers> getQuicktime() {
+    public List<QuicktimeTrailer> getQuicktime() {
         return quicktime;
     }
 
-    public static void setQuicktime(List<QuicktimeTrailers> quicktime) {
-        TrailerResults.quicktime = quicktime;
+    public void setQuicktime(List<QuicktimeTrailer> quicktime) {
+        this.quicktime = quicktime;
     }
 
-    public static List<YouTubeTrailers> getYoutube() {
+    public List<YouTubeTrailer> getYouTubeResults() {
         return youtube;
     }
 
-    public static void setYoutube(List<YouTubeTrailers> youtube) {
-        TrailerResults.youtube = youtube;
+    public void setYoutube(List<YouTubeTrailer> youtube) {
+        this.youtube = youtube;
     }
 }

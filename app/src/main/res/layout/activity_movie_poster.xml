@@ -2,41 +2,29 @@
   ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ic_popcorn">
+    android:background="@mipmap/ic_popcorn"
+    tools:context=".MoviePosterActivity"
+    tools:ignore="Overdraw">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/poster_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MoviePosterActivity">
-
-        <GridView
-            android:id="@+id/poster_grid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"
-            android:gravity="center"
-            android:numColumns="@integer/mp_num_columns"
-            android:stretchMode="columnWidth">
-
-        </GridView>
-
-    </LinearLayout>
+        android:orientation="vertical" />
 
     <ProgressBar
-        android:id="@+id/progress"
+        android:id="@+id/poster_progress"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:background="@android:color/transparent"
         android:gravity="center"
         android:visibility="gone"
         tools:visibility="gone" />
 
-</RelativeLayout>
+</FrameLayout>

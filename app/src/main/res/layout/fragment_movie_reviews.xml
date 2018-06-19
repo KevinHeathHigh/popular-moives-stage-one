@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ru.noties.markwon.view.MarkwonViewCompat
+        android:id="@+id/review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/review_bottom_padding"
+        android:paddingEnd="@dimen/review_right_padding"
+        android:paddingLeft="@dimen/review_left_padding"
+        android:paddingRight="@dimen/review_right_padding"
+        android:paddingStart="@dimen/review_left_padding"
+        android:paddingTop="@dimen/review_top_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        tools:text="@string/sample_review"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/reviewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/review_bottom_padding"
+        android:paddingEnd="@dimen/review_right_padding"
+        android:paddingLeft="@dimen/reviewer_left_padding"
+        android:paddingRight="@dimen/review_right_padding"
+        android:paddingStart="@dimen/reviewer_left_padding"
+        android:paddingTop="@dimen/review_top_padding"
+        android:textStyle="bold|italic"
+        tools:text="@string/sample_reviewer"
+        tools:ignore="RtlHardcoded" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:paddingBottom="@dimen/divider_padding_top_bottom"
+        android:paddingEnd="@dimen/divider_padding_left_right"
+        android:paddingLeft="@dimen/divider_padding_left_right"
+        android:paddingRight="@dimen/divider_padding_left_right"
+        android:paddingStart="@dimen/divider_padding_left_right"
+        android:paddingTop="@dimen/divider_padding_top_bottom" />
+
+</LinearLayout>

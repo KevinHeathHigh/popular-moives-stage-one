@@ -18,62 +18,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/movie_info_info_bottom_padding"
+            android:paddingEnd="@dimen/movie_info_info_right_padding"
             android:paddingLeft="@dimen/movie_info_info_left_padding"
+            android:paddingRight="@dimen/movie_info_info_right_padding"
             android:paddingStart="@dimen/movie_info_info_left_padding"
             android:paddingTop="@dimen/movie_info_info_top_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:background="@color/colorAccent"
-            tools:text="Pop(corn): The Movie" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/movie_poster"
-            android:layout_width="@dimen/movie_info_poster_width"
-            android:layout_height="@dimen/movie_info_poster_height"
-            android:layout_gravity="left"
-            android:layout_weight="@integer/mi_image_weight"
-            android:paddingBottom="@dimen/movie_info_poster_bottom_padding"
-            android:paddingEnd="@dimen/movie_info_poster_right_padding"
-            android:paddingLeft="@dimen/movie_info_poster_left_padding"
-            android:paddingRight="@dimen/movie_info_poster_right_padding"
-            android:paddingStart="@dimen/movie_info_poster_left_padding"
-            android:paddingTop="@dimen/movie_info_poster_top_padding"
-            tools:srcCompat="@mipmap/ic_launcher_foreground"
-            android:contentDescription="@string/cd_movie_poster_image" />
+            tools:ignore="RtlHardcoded"
+            tools:text="@string/sample_title" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="@integer/mi_info_weight"
-            android:orientation="vertical"
-            android:paddingBottom="4dp"
-            android:paddingTop="8dp">
+            android:orientation="horizontal">
 
-            <include layout="@layout/movie_info" />
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="@dimen/movie_info_poster_width"
+                android:layout_height="@dimen/movie_info_poster_height"
+                android:layout_gravity="left|start"
+                android:layout_weight="@integer/mi_image_weight"
+                android:contentDescription="@string/cd_movie_poster_image"
+                android:paddingBottom="@dimen/movie_info_poster_bottom_padding"
+                android:paddingEnd="@dimen/movie_info_poster_right_padding"
+                android:paddingLeft="@dimen/movie_info_poster_left_padding"
+                android:paddingRight="@dimen/movie_info_poster_right_padding"
+                android:paddingStart="@dimen/movie_info_poster_left_padding"
+                android:paddingTop="@dimen/movie_info_poster_top_padding"
+                tools:ignore="RtlHardcoded"
+                tools:srcCompat="@mipmap/ic_launcher_foreground" />
 
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="@integer/mi_desc_weight">
-
-            <TextView
-                android:id="@+id/movie_description"
-                android:layout_width="match_parent"
+            <include
+                android:id="@+id/fragment_movie_info"
+                layout="@layout/fragment_movie_info"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/movie_info_description_bottom_padding"
-                android:paddingEnd="@dimen/movie_info_description_right_padding"
-                android:paddingLeft="@dimen/movie_info_description_left_padding"
-                android:paddingRight="@dimen/movie_info_description_right_padding"
-                android:paddingStart="@dimen/movie_info_description_left_padding"
-                android:paddingTop="@dimen/movie_info_description_top_padding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                tools:text="@tools:sample/lorem/random" />
-        </ScrollView>
+                android:layout_weight="@integer/mi_info_weight" />
 
-    </LinearLayout>
+            <include
+                android:id="@+id/fragment_info_recycler_view"
+                layout="@layout/fragment_info_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/mi_desc_weight" />
+
+        </LinearLayout>
     </LinearLayout>
 </layout>

@@ -1,5 +1,13 @@
 package net.hobbitsoft.popularmovies.movies;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /*
         {
             "author": "Gimly",
@@ -8,53 +16,114 @@ package net.hobbitsoft.popularmovies.movies;
             "url": "https://www.themoviedb.org/review/59f09b979251416ac10169f7"
         },
  */
-public class ReviewInfo {
+@Entity(tableName = "reviews",
+        indices = {@Index("movie_id")})
+public class ReviewInfo implements Parcelable {
 
-    private static String author;
-    private static String content;
-    private static String id;
-    private static String url;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "row_id")
+    private int rowId;
+    @ColumnInfo(name = "movie_id")
+    private int movieId;
+    private String author;
+    private String content;
+    private String id;
+    private String url;
 
+    @Ignore
     public ReviewInfo() {
     }
 
-    public ReviewInfo(String author, String content, String id, String url) {
+    public ReviewInfo(int rowId, int movieId, String author, String content, String id, String url) {
+        this.rowId = rowId;
+        this.movieId = movieId;
         this.author = author;
         this.content = content;
         this.id = id;
         this.url = url;
     }
 
+    private ReviewInfo(Parcel parcel) {
+        movieId = parcel.readInt();
+        author = parcel.readString();
+        content = parcel.readString();
+        id = parcel.readString();
+        url = parcel.readString();
+    }
 
-    public static String getAuthor() {
+    public int getRowId() {
+        return rowId;
+    }
+
+    @SuppressWarnings("unused")
+    public void setRowId(int rowId) {
+        this.rowId = rowId;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getAuthor() {
         return author;
     }
 
-    public static void setAuthor(String author) {
-        ReviewInfo.author = author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public static String getContent() {
+    public String getContent() {
         return content;
     }
 
-    public static void setContent(String content) {
-        ReviewInfo.content = content;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public static String getId() {
+    public String getId() {
         return id;
     }
 
-    public static void setId(String id) {
-        ReviewInfo.id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public static String getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public static void setUrl(String url) {
-        ReviewInfo.url = url;
+    public void setUrl(String url) {
+        this.url = url;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(movieId);
+        dest.writeString(author);
+        dest.writeString(content);
+        dest.writeString(id);
+        dest.writeString(url);
+    }
+
+    public static final Parcelable.Creator<ReviewInfo> CREATOR = new Parcelable.Creator<ReviewInfo>() {
+
+        @Override
+        public ReviewInfo createFromParcel(Parcel parcel) {
+            return new ReviewInfo(parcel);
+        }
+
+        @Override
+        public ReviewInfo[] newArray(int size) {
+            return new ReviewInfo[size];
+        }
+    };
 }
