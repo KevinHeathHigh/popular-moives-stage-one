@@ -12,8 +12,8 @@
     <dimen name="movie_info_poster_height">240dp</dimen>
 
     <!--Movie Info Info Activity Dimensions -->
-    <dimen name="movie_info_info_top_padding">8dp</dimen>
-    <dimen name="movie_info_info_bottom_padding">4dp</dimen>
+    <dimen name="movie_info_info_top_padding">24dp</dimen>
+    <dimen name="movie_info_info_bottom_padding">8dp</dimen>
     <dimen name="movie_info_info_left_padding">12dp</dimen>
     <dimen name="movie_info_info_right_padding">4dp</dimen>
 

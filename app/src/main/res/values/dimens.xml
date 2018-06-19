@@ -12,15 +12,34 @@
     <dimen name="movie_info_poster_height">240dp</dimen>
 
     <!--Movie Info Info Activity Dimensions -->
-    <dimen name="movie_info_info_top_padding">8dp</dimen>
-    <dimen name="movie_info_info_bottom_padding">4dp</dimen>
+    <dimen name="movie_info_info_top_padding">16dp</dimen>
+    <dimen name="movie_info_info_bottom_padding">8dp</dimen>
     <dimen name="movie_info_info_left_padding">12dp</dimen>
     <dimen name="movie_info_info_right_padding">4dp</dimen>
-
 
     <!--Movie Info Activity Description Dimension -->
     <dimen name="movie_info_description_top_padding">16dp</dimen>
     <dimen name="movie_info_description_bottom_padding">16dp</dimen>
     <dimen name="movie_info_description_right_padding">24dp</dimen>
     <dimen name="movie_info_description_left_padding">24dp</dimen>
+
+    <!--Trailer Activity Dimension -->
+    <dimen name="trailer_top_padding">8dp</dimen>
+    <dimen name="trailer_bottom_padding">6dp</dimen>
+    <dimen name="trailer_right_padding">16dp</dimen>
+    <dimen name="trailer_left_padding">8dp</dimen>
+
+    <!--Review Activity Dimension -->
+    <dimen name="review_top_padding">8dp</dimen>
+    <dimen name="review_bottom_padding">8dp</dimen>
+    <dimen name="review_right_padding">16dp</dimen>
+    <dimen name="review_left_padding">8dp</dimen>
+    <dimen name="reviewer_left_padding">16dp</dimen>
+
+    <!--Trailer Play Button Dimensions -->
+    <dimen name="play_button_padding">8dp</dimen>
+
+    <!--Trailer / Review divider line -->
+    <dimen name="divider_padding_top_bottom">1dp</dimen>
+    <dimen name="divider_padding_left_right">16dp</dimen>
 </resources>

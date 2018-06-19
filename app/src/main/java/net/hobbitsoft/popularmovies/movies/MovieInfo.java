@@ -1,106 +1,148 @@
 /*
  * Copyright (c) 2018.  HobbitSoft - Kevin Heath High
+ * This POJO defines the All the objects associated with a single MovieDB Record
+ * It also defines the columns for the Favorites table using Room Annotation.
+ * https://developer.android.com/topic/libraries/architecture/room
  */
 
 package net.hobbitsoft.popularmovies.movies;
 /* Sample of Movie Info JSON
 {
-    "vote_count": 1626,
+    "voteCount": 1626,
     "id": 337167,
     "video": false,
-    "vote_average": 6,
+    "voteAverage": 6,
     "title": "Fifty Shades Freed",
     "popularity": 567.058534,
-    "poster_path": "/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg",
-    "original_language": "en",
-    "original_title": "Fifty Shades Freed",
-    "genre_ids": [
+    "posterPath": "/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg",
+    "originalLanguage": "en",
+    "originalTitle": "Fifty Shades Freed",
+    "genreIds": [
         18,
         10749
     ],
-    "backdrop_path": "/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg",
+    "backdropPath": "/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg",
     "adult": false,
     "overview": "Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.",
-    "release_date": "2018-02-07"
+    "releaseDate": "2018-02-07"
 }
  */
 
 import android.annotation.SuppressLint;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import net.hobbitsoft.popularmovies.utils.ArrayConverter;
+import net.hobbitsoft.popularmovies.utils.BitmapConverter;
+
 import java.util.ArrayList;
 
-@SuppressWarnings("unchecked")
+@Entity(tableName = "favorites")
 public class MovieInfo implements Parcelable {
 
-    private int vote_count;
+    //issue with Room that requires these to be public because it can't find their Getters
+    @ColumnInfo(name = "vote_count")
+    private int voteCount;
+    @PrimaryKey
     private int id;
     private String title;
     private boolean video;
-    private double vote_average;
-    private String backdrop_path;
+    @ColumnInfo(name = "vote_average")
+    private double voteAverage;
+    @ColumnInfo(name = "backdrop_path")
+    private String backdropPath;
     private boolean adult;
     private String overview;
-    private String release_date;
-    private String original_language;
-    private String original_title;
-    private ArrayList<Integer> genre_ids;
+    @ColumnInfo(name = "release_date")
+    private String releaseDate;
+    @ColumnInfo(name = "original_language")
+    private String originalLanguage;
+    @ColumnInfo(name = "original_title")
+    private String originalTitle;
+    @ColumnInfo(name = "genre_ids")
+    @TypeConverters(ArrayConverter.class)
+    private ArrayList<Integer> genreIds;
     private double popularity;
-    private String poster_path;
+    @ColumnInfo(name = "poster_path")
+    private String posterPath;
+    @ColumnInfo(name = "poster_image_url")
     private String posterImageURL;
+    @ColumnInfo(name = "poster_detail_image_url")
     private String posterDetailImageURL;
+    @ColumnInfo(name = "poster_large_image_url")
     private String posterLargeImageURL;
+    @ColumnInfo(name = "backdrop_image_url")
+    private String backdropImageURL;
+    @ColumnInfo(name = "poster_bitmap")
+    @TypeConverters(BitmapConverter.class)
     private Bitmap posterBitmap;
+    @ColumnInfo(name = "detail_bitmap")
+    @TypeConverters(BitmapConverter.class)
+    private Bitmap detailBitmap;
+    @Ignore
+    private ArrayList<YouTubeTrailer> youTubeTrailers;
+    @Ignore
+    private ArrayList<ReviewInfo> reviewInfoList;
+    @Ignore
+    private boolean isFavorite;
 
+    @Ignore
     public MovieInfo() {
     }
 
-    public MovieInfo(int vote_count, int id, String title, boolean video, double vote_average, String backdrop_path, boolean adult, String overview, String release_date, String original_language, String original_title, ArrayList<Integer> genre_ids, double popularity, String poster_path) {
-        this.vote_count = vote_count;
+    public MovieInfo(int voteCount, int id, String title, boolean video, double voteAverage, String backdropPath, boolean adult, String overview, String releaseDate, String originalLanguage, String originalTitle, ArrayList<Integer> genreIds, double popularity, String posterPath, Bitmap posterBitmap, Bitmap detailBitmap) {
+        this.voteCount = voteCount;
         this.id = id;
         this.title = title;
         this.video = video;
-        this.vote_average = vote_average;
-        this.backdrop_path = backdrop_path;
+        this.voteAverage = voteAverage;
+        this.backdropPath = backdropPath;
         this.adult = adult;
         this.overview = overview;
-        this.release_date = release_date;
-        this.original_language = original_language;
-        this.original_title = original_title;
-        this.genre_ids = genre_ids;
+        this.releaseDate = releaseDate;
+        this.originalLanguage = originalLanguage;
+        this.originalTitle = originalTitle;
+        this.genreIds = genreIds;
         this.popularity = popularity;
-        this.poster_path = poster_path;
+        this.posterPath = posterPath;
+        this.posterBitmap = posterBitmap;
+        this.detailBitmap = detailBitmap;
     }
 
     @SuppressLint("ParcelClassLoader")
     private MovieInfo(Parcel parcel) {
-        vote_count = parcel.readInt();
+        voteCount = parcel.readInt();
         id = parcel.readInt();
         title = parcel.readString();
         video = (Boolean) parcel.readValue(null);
-        vote_average = parcel.readDouble();
-        backdrop_path = parcel.readString();
+        voteAverage = parcel.readDouble();
+        backdropPath = parcel.readString();
         adult = (Boolean) parcel.readValue(null);
         overview = parcel.readString();
-        release_date = parcel.readString();
-        original_language = parcel.readString();
-        original_title = parcel.readString();
-        genre_ids = (ArrayList<Integer>) parcel.readSerializable();
+        releaseDate = parcel.readString();
+        originalLanguage = parcel.readString();
+        originalTitle = parcel.readString();
+        genreIds = ArrayConverter.stringToArray(parcel.readString());
         popularity = parcel.readDouble();
-        poster_path = parcel.readString();
+        posterPath = parcel.readString();
         posterImageURL = parcel.readString();
         posterDetailImageURL = parcel.readString();
         posterLargeImageURL = parcel.readString();
     }
 
+    @SuppressWarnings("unused")
     public int getVoteCount() {
-        return this.vote_count;
+        return this.voteCount;
     }
 
     public void setVoteCount(int vote_count) {
-        this.vote_count = vote_count;
+        this.voteCount = vote_count;
     }
 
     public int getId() {
@@ -120,11 +162,11 @@ public class MovieInfo implements Parcelable {
     }
 
     public double getVoteAverage() {
-        return this.vote_average;
+        return this.voteAverage;
     }
 
     public void setVoteAverage(double vote_average) {
-        this.vote_average = vote_average;
+        this.voteAverage = vote_average;
     }
 
     public String getTitle() {
@@ -144,43 +186,43 @@ public class MovieInfo implements Parcelable {
     }
 
     public String getPosterPath() {
-        return this.poster_path;
+        return this.posterPath;
     }
 
     public void setPosterPath(String poster_path) {
-        this.poster_path = poster_path;
+        this.posterPath = poster_path;
     }
 
     public String getOriginalLanguage() {
-        return this.original_language;
+        return this.originalLanguage;
     }
 
     public void setOriginalLanguage(String original_language) {
-        this.original_language = original_language;
+        this.originalLanguage = original_language;
     }
 
     public String getOriginalTitle() {
-        return this.original_title;
+        return this.originalTitle;
     }
 
     public void setOriginalTitle(String original_title) {
-        this.original_title = original_title;
+        this.originalTitle = original_title;
     }
 
     public ArrayList<Integer> getGenreIds() {
-        return this.genre_ids;
+        return this.genreIds;
     }
 
     public void setGenreIds(ArrayList<Integer> genre_ids) {
-        this.genre_ids = genre_ids;
+        this.genreIds = genre_ids;
     }
 
     public String getBackdropPath() {
-        return this.backdrop_path;
+        return this.backdropPath;
     }
 
     public void setBackdropPath(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+        this.backdropPath = backdrop_path;
     }
 
     public boolean getAdult() {
@@ -200,11 +242,11 @@ public class MovieInfo implements Parcelable {
     }
 
     public String getReleaseDate() {
-        return this.release_date;
+        return this.releaseDate;
     }
 
     public void setReleaseDate(String release_date) {
-        this.release_date = release_date;
+        this.releaseDate = release_date;
     }
 
     public String getPosterImageURL() {
@@ -231,12 +273,58 @@ public class MovieInfo implements Parcelable {
         this.posterLargeImageURL = posterLargeImageURL;
     }
 
+    public String getBackdropImageURL() {
+        return backdropImageURL;
+    }
+
+    public void setBackdropImageURL(String backdropImageURL) {
+        this.backdropImageURL = backdropImageURL;
+    }
+
     public Bitmap getPosterBitmap() {
         return posterBitmap;
     }
 
     public void setPosterBitmap(Bitmap posterBitmap) {
         this.posterBitmap = posterBitmap;
+    }
+
+    public Bitmap getDetailBitmap() {
+        return detailBitmap;
+    }
+
+    public void setDetailBitmap(Bitmap detailBitmap) {
+        this.detailBitmap = detailBitmap;
+    }
+
+    public ArrayList<YouTubeTrailer> getYouTubeTrailerList() {
+        return youTubeTrailers;
+    }
+
+    public void setYouTubeTrailerList(ArrayList<YouTubeTrailer> youTubeTrailerList) {
+        this.youTubeTrailers = youTubeTrailerList;
+    }
+
+    public ArrayList<ReviewInfo> getReviewInfoList() {
+        return reviewInfoList;
+    }
+
+    public void setReviewInfoList(ArrayList<ReviewInfo> reviewInfoList) {
+        this.reviewInfoList = reviewInfoList;
+    }
+
+    //Just looks prettier than using 'get'
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    @SuppressWarnings("unused")
+    public boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 
     @Override
@@ -247,20 +335,20 @@ public class MovieInfo implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
 
-        dest.writeInt(vote_count);
+        dest.writeInt(voteCount);
         dest.writeInt(id);
         dest.writeString(title);
         dest.writeValue(video);
-        dest.writeDouble(vote_average);
-        dest.writeString(backdrop_path);
+        dest.writeDouble(voteAverage);
+        dest.writeString(backdropPath);
         dest.writeValue(adult);
         dest.writeString(overview);
-        dest.writeString(release_date);
-        dest.writeString(original_language);
-        dest.writeString(original_title);
-        dest.writeSerializable(genre_ids);
+        dest.writeString(releaseDate);
+        dest.writeString(originalLanguage);
+        dest.writeString(originalTitle);
+        dest.writeString(ArrayConverter.arrayToString(genreIds));
         dest.writeDouble(popularity);
-        dest.writeString(poster_path);
+        dest.writeString(posterPath);
         dest.writeString(posterImageURL);
         dest.writeString(posterDetailImageURL);
         dest.writeString(posterLargeImageURL);
@@ -269,8 +357,8 @@ public class MovieInfo implements Parcelable {
     public static final Parcelable.Creator<MovieInfo> CREATOR = new Parcelable.Creator<MovieInfo>() {
 
         @Override
-        public MovieInfo createFromParcel(Parcel source) {
-            return new MovieInfo(source);
+        public MovieInfo createFromParcel(Parcel parcel) {
+            return new MovieInfo(parcel);
         }
 
         @Override

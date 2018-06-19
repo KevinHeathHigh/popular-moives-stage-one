@@ -2,14 +2,31 @@
   ~ Copyright (c) 2018.  HobbitSoft - Kevin Heath High
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/lt_mn_popular"
-            android:title="@string/lt_menu_popular_label" />
+            android:contentDescription="@string/cd_menu_popular_label"
+            android:icon="@drawable/ic_popular_menu_24dp"
+            android:title="@string/lt_menu_popular_label"
+            app:showAsAction="ifRoom"
+            tools:icon="@drawable/ic_popular_menu_24dp" />
         <item
             android:id="@+id/lt_mn_top_rated"
-            android:title="@string/lt_menu_top_rated_label" />
+            android:contentDescription="@string/cd_menu_top_rated_label"
+            android:icon="@drawable/ic_top_rated_menu_24dp"
+            android:title="@string/lt_menu_top_rated_label"
+            app:showAsAction="ifRoom"
+            tools:icon="@drawable/ic_top_rated_menu_24dp" />
+        <item
+            android:id="@+id/lt_mn_favorites"
+            android:contentDescription="@string/cd_menu_favorites_label"
+            android:icon="@drawable/ic_favorite_menu_24dp"
+            android:title="@string/lt_menu_favorites_label"
+            app:showAsAction="ifRoom"
+            tools:icon="@drawable/ic_favorite_menu_24dp" />
     </group>
 </menu>

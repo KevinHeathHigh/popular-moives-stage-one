@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <TextView
+        android:id="@+id/movie_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/movie_info_description_bottom_padding"
+        android:paddingEnd="@dimen/movie_info_description_right_padding"
+        android:paddingLeft="@dimen/movie_info_description_left_padding"
+        android:paddingRight="@dimen/movie_info_description_right_padding"
+        android:paddingStart="@dimen/movie_info_description_left_padding"
+        android:paddingTop="@dimen/movie_info_description_top_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        tools:ignore="RtlHardcoded"
+        tools:text="@string/sample_overview" />
+
+</FrameLayout>

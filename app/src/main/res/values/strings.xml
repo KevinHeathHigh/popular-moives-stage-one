@@ -5,35 +5,42 @@
 <resources>
     <string name="app_name">Pop (corn) Movies</string>
 
-    <!-- Movie Database API Strings-->
-    <string name="md_api_base_url" translatable="false">https://api.themoviedb.org/3</string>
-    <string name="md_movie_path" translatable="false">movie</string>
-    <string name="md_popular_path" translatable="false">popular</string>
-    <string name="md_top_rated_path" translatable="false">top_rated</string>
-    <string name="md_page_key_param" translatable="false">page</string>
-    <string name="md_api_key_param" translatable="false">api_key</string>
-    <string name="initial_result_page" translatable="false">1</string>
-
-    <!--Movie Database Image Strings -->
-    <string name="md_image_base_url" translatable="false">http://image.tmdb.org/t/p/</string>
-
     <!--List Type Menu Items -->
     <string name="lt_menu_popular_label">Popular</string>
     <string name="lt_menu_top_rated_label">Top Rated</string>
+    <string name="lt_menu_favorites_label">Favorites</string>
+
+    <!-- Menu Contentd Descriptiosn -->
+    <string name="cd_menu_popular_label">Show Popular Movies</string>
+    <string name="cd_menu_top_rated_label">Show Top Rated Movies</string>
+    <string name="cd_menu_favorites_label">Show Favorite Movies</string>
+
+    <!--Info Movie Menu Items -->
+    <string name="mi_menu_overview_label">Overview</string>
+    <string name="mi_menu_trailers_label">Trailers</string>
+    <string name="mi_menu_reviews_label">Reviews</string>
 
     <string name="rating_out_of">/10</string>
-
-    <!--Instance State Key -->
-    <string name="mi_instance_state_key" translatable="false">movie_info</string>
-    <string name="lt_instance_state_key" translatable="false">list_type</string>
-    <string name="checked_menu_id" translatable="false">check_menu_id</string>
+    <string name="cd_rating">Rating</string>
 
     <!-- Error Messages -->
     <string name="er_no_access_to_movie_db">Unable to access Movie DB, check network connectivity and try again</string>
     <string name="er_unknown_date">Unknown</string>
     <string name="er_no_intent">No Intent Found</string>
+    <string name="er_no_favorite_movies">You currently do not have any favorite movies saved.</string>
 
     <!-- Content Descriptors -->
     <string name="cd_movie_poster_image">Image of Movie Poster</string>
+    <string name="cd_favorites_label">Favorite</string>
+    <string name="cd_play_image">Play Trailer</string>
 
+    <!-- Sample Data for layouts -->
+    <string name="sample_title" translatable="false">Thor: Ragnarok</string>
+    <string name="sample_overview" translatable="false">Thor is on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela.</string>
+    <string name="sample_year" translatable="false">2015</string>
+    <string name="sample_review" translatable="false">_Ragnarok_ is a tough one to review completely without spoiler, so I\'ll keep this brief:\r\n\r\n* I was bothered by a small number of things that happened in this movie.\r\n* I was in love with a large number of things that happened in this movie.\r\n* _Thor: Ragnarok_ is not the MCU\'s best movie.\r\n* _Thor: Ragnarok_ is the MCU's most fun movie.\r\n* Can we **please** have a worldwide ban on putting anything that happens in the third act of your movie, in said movie's trailers?\r\nThank you for your time. 4 stars.\r\n\r\n\r\n_Final rating:★★★★ - Very strong appeal. A personal favourite._</string>
+    <string name="sample_reviewer" translatable="false">Gimly</string>
+    <string name="sample_trailer_name" translatable="false">\"Thor: Ragnarok\" Official Trailer</string>
+    <string name="sample_trailer_size" translatable="false">HD</string>
+    <string name="sample_trailer_type" translatable="false">Trailer</string>
 </resources>
